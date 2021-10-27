@@ -1,0 +1,2 @@
+#!/bin/sh
+docker build --target stash-origin -t matyasosg/stash-origin:3.6-el7-development .

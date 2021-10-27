@@ -3,13 +3,13 @@
 ##########
 
 # Specify the base Yum repository to get the necessary RPMs
-ARG BASE_YUM_REPO=testing
+ARG BASE_YUM_REPO=development
 
-FROM opensciencegrid/software-base:3.5-el7-$BASE_YUM_REPO AS xcache
+FROM opensciencegrid/software-base:3.6-el7-$BASE_YUM_REPO AS xcache
 LABEL maintainer OSG Software <help@opensciencegrid.org>
 
 # Previous arg has gone out of scope
-ARG BASE_YUM_REPO=testing
+ARG BASE_YUM_REPO=development
 
 # Default root dir
 ENV XC_ROOTDIR /xcache/namespace
@@ -60,7 +60,7 @@ FROM xcache AS atlas-xcache
 LABEL maintainer OSG Software <help@opensciencegrid.org>
 
 # Specify the base Yum repository to get the necessary RPMs
-ARG BASE_YUM_REPO=testing
+ARG BASE_YUM_REPO=development
 
 ENV XC_IMAGE_NAME atlas-xcache
 
@@ -81,7 +81,7 @@ COPY atlas-xcache/image-config.d/10-atlas-xcache.sh /etc/osg/image-init.d/
 FROM xcache AS cms-xcache
 LABEL maintainer OSG Software <help@opensciencegrid.org>
 
-ARG BASE_YUM_REPO=testing
+ARG BASE_YUM_REPO=development
 
 ENV XC_IMAGE_NAME cms-xcache
 
@@ -106,7 +106,7 @@ EXPOSE 1094
 FROM xcache AS stash-cache
 LABEL maintainer OSG Software <help@opensciencegrid.org>
 
-ARG BASE_YUM_REPO=testing
+ARG BASE_YUM_REPO=development
 
 ENV XC_IMAGE_NAME stash-cache
 
@@ -135,7 +135,7 @@ FROM xcache AS stash-origin
 LABEL maintainer OSG Software <help@opensciencegrid.org>
 
 # Specify the base Yum repository to get the necessary RPMs
-ARG BASE_YUM_REPO=testing
+ARG BASE_YUM_REPO=development
 
 ENV XC_IMAGE_NAME stash-origin
 

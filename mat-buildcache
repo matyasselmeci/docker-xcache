@@ -1,0 +1,2 @@
+#!/bin/sh
+docker build --target stash-cache -t matyasosg/stash-cache:3.6-el7-development .
