@@ -172,7 +172,8 @@ FROM atlas-xcache AS atlas-xcache-debug
 ARG BASE_YUM_REPO=testing
 RUN yum -y install -y --enablerepo="osg-$BASE_YUM_REPO" \
     gdb \
-    strace
+    strace \
+    vim-enhanced
 
 ####################
 # cms-xcache-debug #
@@ -184,7 +185,8 @@ FROM cms-xcache AS cms-xcache-debug
 ARG BASE_YUM_REPO=testing
 RUN yum -y install -y --enablerepo="osg-$BASE_YUM_REPO" \
     gdb \
-    strace
+    strace \
+    vim-enhanced
 
 #####################
 # stash-cache-debug #
@@ -196,7 +198,8 @@ FROM stash-cache AS stash-cache-debug
 ARG BASE_YUM_REPO=testing
 RUN yum -y install -y --enablerepo="osg-$BASE_YUM_REPO" \
     gdb \
-    strace
+    strace \
+    vim-enhanced
 
 ######################
 # stash-origin-debug #
@@ -208,4 +211,5 @@ FROM stash-origin AS stash-origin-debug
 ARG BASE_YUM_REPO=testing
 RUN yum -y install -y --enablerepo="osg-$BASE_YUM_REPO" \
     gdb \
-    strace
+    strace \
+    vim-enhanced
