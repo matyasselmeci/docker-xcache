@@ -9,6 +9,4 @@ namespace_dir=$(cconfig -c "/etc/xrootd/xrootd-$XC_IMAGE_NAME.cfg" 2>&1 \
 space_dirs=$(cconfig -c "/etc/xrootd/xrootd-$XC_IMAGE_NAME.cfg" 2>&1 \
                      | awk "/^oss.space/ {print \$3}")
 
-for oss_dir in $namespace_dir $space_dirs; do
-    chown -R xrootd:xrootd $oss_dir
-done
+find $namespace_dir $space_dirs -not -name lost+found -exec chown xrootd:xrootd {} +
